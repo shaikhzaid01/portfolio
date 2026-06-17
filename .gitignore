@@ -29,3 +29,16 @@ yarn-error.log
 /.zed
 .geminirules
 .code-review-graph
+.claude
+.cursorrules
+.gemini
+.github/code-review-graph.instruction.md
+.kiro
+.mcp.json
+.opencode.json
+.qoder
+.windsurfrules
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+QODER.md
