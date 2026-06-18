@@ -1,0 +1,142 @@
+import { useEffect, useState, useRef } from 'react';
+import { CalendarRange, Database, Sparkles, Server, ShieldCheck, LucideIcon } from 'lucide-react';
+
+interface CardData {
+    title: string;
+    label: string;
+    description: string;
+    icon: LucideIcon;
+    accent: string;
+}
+
+export function TrustSnapshot() {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.15 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
+    const cards: CardData[] = [
+        {
+            title: '3+ Years',
+            label: 'Production Experience',
+            description: 'Building real-world web platforms, backend systems, APIs, and client projects.',
+            icon: CalendarRange,
+            accent: 'from-blue-500/20 to-cyan-500/20 text-blue-600 dark:text-cyan-400',
+        },
+        {
+            title: 'Backend First',
+            label: 'System Thinking',
+            description: 'Strong focus on database structure, API design, authentication, business logic, and maintainability.',
+            icon: Database,
+            accent: 'from-cyan-500/20 to-blue-500/20 text-cyan-600 dark:text-cyan-400',
+        },
+        {
+            title: 'AI Ready',
+            label: 'Workflow Integration',
+            description: 'AI-powered features, prompt flows, automation logic, and smart backend integrations.',
+            icon: Sparkles,
+            accent: 'from-purple-500/20 to-blue-500/20 text-purple-600 dark:text-purple-400',
+        },
+        {
+            title: 'Deployment',
+            label: 'Server Ownership',
+            description: 'Apache/Nginx setup, SSL, queues, workers, cron jobs, debugging, and production support.',
+            icon: Server,
+            accent: 'from-blue-500/20 to-purple-500/20 text-blue-600 dark:text-blue-400',
+        },
+        {
+            title: 'Business Logic',
+            label: 'Product Responsibility',
+            description: 'Payments, wallets, admin panels, role flows, approvals, and scalable product modules.',
+            icon: ShieldCheck,
+            accent: 'from-purple-500/20 to-cyan-500/20 text-purple-600 dark:text-cyan-400',
+        },
+    ];
+
+    return (
+        <section
+            id="systems"
+            ref={sectionRef}
+            className="w-full py-28 md:py-36 bg-neutral-50/20 dark:bg-[#070B16]/50 border-y border-neutral-200/40 dark:border-sky-500/10 overflow-hidden"
+        >
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                {/* Header with Animation */}
+                <div
+                    className={`max-w-3xl mx-auto text-center transition-all duration-1000 ease-out transform ${
+                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                    }`}
+                >
+                    <h2 className="text-[13px] font-bold uppercase tracking-widest text-blue-600 dark:text-cyan-400 mb-3">
+                        Engineering Philosophy
+                    </h2>
+                    <h3 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] dark:text-neutral-50 leading-[1.15]">
+                        Built for Real Production Work
+                    </h3>
+                    <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-[720px] mx-auto">
+                        From backend architecture and APIs to AI workflows, payments, deployment, and long-term support — every project is planned like a real product.
+                    </p>
+                </div>
+
+                {/* Grid Container */}
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                    {cards.map((card, idx) => {
+                        const Icon = card.icon;
+                        return (
+                            <div
+                                key={idx}
+                                style={{ transitionDelay: `${idx * 100}ms` }}
+                                className={`group relative rounded-2xl border border-neutral-200/50 bg-white p-8 shadow-xs transition-all duration-700 hover:-translate-y-1 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] ${
+                                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                                }`}
+                            >
+                                {/* Subtle decorative top gradient line */}
+                                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-linear-to-r opacity-0 transition-opacity duration-500 group-hover:opacity-100 from-blue-500/80 via-cyan-400/80 to-purple-500/80" />
+
+                                {/* Card Header / Icon */}
+                                <div className="flex items-center gap-3">
+                                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br transition-all duration-300 ${card.accent}`}>
+                                        <Icon className="h-5 w-5" />
+                                    </div>
+                                    <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
+                                        {card.label}
+                                    </span>
+                                </div>
+
+                                {/* Title */}
+                                <h4 className="mt-6 text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                                    {card.title}
+                                </h4>
+
+                                {/* Description */}
+                                <p className="mt-3 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+                                    {card.description}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
