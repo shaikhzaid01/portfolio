@@ -18,7 +18,7 @@ import { Terminal, Cpu, ArrowRight } from 'lucide-react';
 export default function Welcome() {
     return (
         <>
-            <Head title="Shaikh Zaid | Premium Full Stack Engineering Portfolio" />
+            <Head title="Shaikh Zaid | Full Stack Engineering Portfolio" />
             <div className="min-h-screen bg-white text-neutral-900 transition-colors duration-300 dark:bg-[#03050c] dark:text-neutral-50 font-sans selection:bg-blue-500/20 selection:text-blue-600 dark:selection:bg-cyan-500/20 dark:selection:text-cyan-400">
                 {/* 1. Navigation Bar */}
                 <Navbar />

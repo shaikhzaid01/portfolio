@@ -4,6 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- SEO Metadata -->
+        <meta name="description" content="Shaikh Zaid's Portfolio - Professional software engineer, designing and building high-performance systems with Laravel, React, and server-side automation. Let's engineer scalable platforms with optimal uptime and security.">
+        <meta name="keywords" content="Shaikh Zaid, Software Engineer, Full Stack Developer, Laravel, React, PHP, Web Development, API Integration, Backend Developer, Systems Architect">
+        <meta name="author" content="Shaikh Zaid">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:title" content="Shaikh Zaid | Full Stack Engineering Portfolio">
+        <meta property="og:description" content="I design and build high-performance systems with Laravel, React, and server-side automation. Let's engineer scalable platforms with optimal uptime and security.">
+        <meta property="og:image" content="{{ asset('og-image.png') }}">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ url()->current() }}">
+        <meta property="twitter:title" content="Shaikh Zaid | Full Stack Engineering Portfolio">
+        <meta property="twitter:description" content="I design and build high-performance systems with Laravel, React, and server-side automation.">
+        <meta property="twitter:image" content="{{ asset('og-image.png') }}">
+
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script>
             (function() {
@@ -39,7 +59,7 @@
         @viteReactRefresh
         @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
         <x-inertia::head>
-            <title>{{ config('app.name', 'Laravel') }}</title>
+            <title>{{ config('app.name', 'Shaikh Zaid') }}</title>
         </x-inertia::head>
     </head>
     <body class="font-sans antialiased">
