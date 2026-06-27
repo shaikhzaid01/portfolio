@@ -1,17 +1,17 @@
 import { Head } from '@inertiajs/react';
 import { Navbar } from '@/components/navbar';
-import { TrustSnapshot } from '@/components/trust-snapshot';
-import { PositioningSection } from '@/components/positioning-section';
-import { SystemsIBuild } from '@/components/systems-i-build';
-import { FeaturedCaseStudies } from '@/components/featured-case-studies';
-import { ArchitectureShowcase } from '@/components/architecture-showcase';
-import { ProductionResponsibility } from '@/components/production-responsibility';
-import { AIWorkflow } from '@/components/ai-workflow';
-import { TechStack } from '@/components/tech-stack';
-import { WorkingProcess } from '@/components/working-process';
-import { Testimonials } from '@/components/testimonials';
-import { AboutSection } from '@/components/about-section';
-import { FinalCTA } from '@/components/final-cta';
+import { TrustSnapshot } from '@/components/sections/trust-snapshot';
+import { PositioningSection } from '@/components/sections/positioning-section';
+import { SystemsIBuild } from '@/components/sections/systems-i-build';
+import { FeaturedCaseStudies } from '@/components/sections/featured-case-studies';
+import { ArchitectureShowcase } from '@/components/sections/architecture-showcase';
+import { ProductionResponsibility } from '@/components/sections/production-responsibility';
+import { AIWorkflow } from '@/components/sections/ai-workflow';
+import { TechStack } from '@/components/sections/tech-stack';
+import { WorkingProcess } from '@/components/sections/working-process';
+import { Testimonials } from '@/components/sections/testimonials';
+import { AboutSection } from '@/components/sections/about-section';
+import { FinalCTA } from '@/components/sections/final-cta';
 import { Footer } from '@/components/footer';
 import { Terminal, Cpu, ArrowRight } from 'lucide-react';
 
@@ -19,12 +19,12 @@ export default function Welcome() {
     return (
         <>
             <Head title="Shaikh Zaid | Premium Full Stack Engineering Portfolio" />
-            <div className="min-h-screen bg-white text-neutral-900 transition-colors duration-300 dark:bg-neutral-950 dark:text-neutral-50 font-sans selection:bg-blue-500/20 selection:text-blue-600 dark:selection:bg-cyan-500/20 dark:selection:text-cyan-400">
+            <div className="min-h-screen bg-white text-neutral-900 transition-colors duration-300 dark:bg-[#03050c] dark:text-neutral-50 font-sans selection:bg-blue-500/20 selection:text-blue-600 dark:selection:bg-cyan-500/20 dark:selection:text-cyan-400">
                 {/* 1. Navigation Bar */}
                 <Navbar />
 
                 {/* 2. Hero Section (Premium, Handcrafted, Cinematic) */}
-                <section className="relative w-full pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+                <section className="relative w-full pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
                     {/* Futuristic grid background overlay */}
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/40 via-transparent to-transparent dark:from-blue-950/10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_right,_var(--tw-gradient-stops))] from-purple-50/30 via-transparent to-transparent dark:from-purple-950/5 pointer-events-none" />

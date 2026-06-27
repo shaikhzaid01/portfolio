@@ -56,7 +56,7 @@ export function Navbar() {
                     <span className="text-[19px] font-bold tracking-tight text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-50 dark:group-hover:text-cyan-400">
                         Shaikh Zaid
                     </span>
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-450 dark:text-neutral-400">
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
                         Full Stack Engineer
                     </span>
                 </a>

@@ -34,8 +34,8 @@ export function ProductSystemBlueprint() {
     return (
         <div className="relative w-full p-8 rounded-2xl border border-neutral-200/50 bg-white shadow-lg dark:border-sky-500/10 dark:bg-[#0B1020] backdrop-blur-xs font-mono text-[10px]">
             {/* Title bar */}
-            <div className="flex items-center justify-between border-b border-neutral-250/30 dark:border-neutral-800/65 pb-3 mb-6">
-                <span className="font-bold tracking-tight text-neutral-550 dark:text-neutral-400 uppercase">
+            <div className="flex items-center justify-between border-b border-neutral-200/30 dark:border-neutral-800/65 pb-3 mb-6">
+                <span className="font-bold tracking-tight text-neutral-400 dark:text-neutral-400 uppercase">
                     Product System Blueprint
                 </span>
                 <span className="text-blue-500 dark:text-cyan-400 font-bold uppercase tracking-widest text-[9px] animate-pulse">
@@ -61,7 +61,7 @@ export function ProductSystemBlueprint() {
                             {layer.items.map((item) => (
                                 <div
                                     key={item}
-                                    className="px-2.5 py-1.5 rounded-lg border border-neutral-200/50 bg-neutral-50/50 dark:border-sky-500/5 dark:bg-[#050814]/40 text-neutral-700 dark:text-neutral-300 font-bold tracking-tight shadow-3xs transition-all duration-300 hover:border-neutral-305 dark:hover:border-neutral-700 hover:shadow-2xs"
+                                    className="px-2.5 py-1.5 rounded-lg border border-neutral-200/50 bg-neutral-50/50 dark:border-sky-500/5 dark:bg-[#050814]/40 text-neutral-700 dark:text-neutral-300 font-bold tracking-tight shadow-3xs transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xs"
                                 >
                                     {item}
                                 </div>

@@ -5,7 +5,7 @@ export function FinalCTA() {
     return (
         <section
             id="contact"
-            className="relative w-full py-28 md:py-36 bg-white dark:bg-[#050814] overflow-hidden border-t border-neutral-100 dark:border-neutral-900/30"
+            className="relative w-full py-16 md:py-24 bg-white dark:bg-[#050814] overflow-hidden border-t border-neutral-100 dark:border-neutral-900/30"
         >
             {/* Dynamic accent background blur */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent dark:from-cyan-500/5 pointer-events-none" />

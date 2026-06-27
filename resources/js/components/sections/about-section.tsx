@@ -39,7 +39,7 @@ export function AboutSection() {
         <section
             id="about"
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-white dark:bg-[#050814] border-t border-neutral-100 dark:border-neutral-900/30"
+            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] border-t border-neutral-100 dark:border-neutral-900/30"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

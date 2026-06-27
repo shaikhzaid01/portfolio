@@ -31,12 +31,12 @@ export function Testimonials() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-white dark:bg-[#050814] overflow-hidden"
+            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] overflow-hidden"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-1000 ease-out transform ${
+                    className={`max-w-3xl mx-auto text-center mb-10 transition-all duration-1000 ease-out transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >

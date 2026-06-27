@@ -100,7 +100,7 @@ export function SystemsIBuild() {
         <section
             id="systems"
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
+            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Title block */}
@@ -121,7 +121,7 @@ export function SystemsIBuild() {
                 </div>
 
                 {/* 8-card responsive Grid */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {systems.map((system, idx) => {
                         const Icon = system.icon;
                         return (
@@ -158,7 +158,7 @@ export function SystemsIBuild() {
 
                 {/* Bottom note */}
                 <div
-                    className={`mt-16 text-center transition-all duration-1000 ease-out delay-500 transform ${
+                    className={`mt-10 text-center transition-all duration-1000 ease-out delay-500 transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >

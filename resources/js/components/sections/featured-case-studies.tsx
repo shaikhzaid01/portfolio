@@ -89,7 +89,7 @@ export function FeaturedCaseStudies() {
         <section
             id="case-studies"
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-white dark:bg-[#050814] overflow-hidden"
+            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] overflow-hidden"
         >
             {/* Background design pattern lines */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
@@ -97,7 +97,7 @@ export function FeaturedCaseStudies() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mb-16 transition-all duration-1000 ease-out transform ${
+                    className={`max-w-3xl mb-10 transition-all duration-1000 ease-out transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >
@@ -123,13 +123,13 @@ export function FeaturedCaseStudies() {
                         <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-br from-blue-500/2 to-cyan-500/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         
                         <div className="flex flex-col lg:flex-row justify-between gap-8">
-                            <div className="flex-1">
+                           <div className="flex-1">
                                 <div className="flex items-center justify-between border-b border-neutral-200/30 dark:border-neutral-800/60 pb-4 mb-6">
                                     <div className="flex items-center gap-3">
                                         <h4 className="text-[22px] font-bold text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                                             {ivatan.title}
                                         </h4>
-                                        <span className="text-[10px] font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-450 px-2.5 py-0.5 rounded-full">
+                                        <span className="text-[10px] font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 px-2.5 py-0.5 rounded-full">
                                             {ivatan.tag}
                                         </span>
                                     </div>
@@ -138,27 +138,27 @@ export function FeaturedCaseStudies() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-[15px]">
                                     <div>
-                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1.5">The Problem</h5>
+                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1.5">The Problem</h5>
                                         <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{ivatan.problem}</p>
                                     </div>
                                     <div>
-                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1.5">System Built</h5>
+                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1.5">System Built</h5>
                                         <p className="text-neutral-800 dark:text-neutral-300 font-medium leading-relaxed">{ivatan.systemBuilt}</p>
                                     </div>
                                     <div>
-                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1.5">My Responsibility</h5>
+                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1.5">My Responsibility</h5>
                                         <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{ivatan.responsibility}</p>
                                     </div>
                                     <div>
-                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1.5">Result</h5>
-                                        <p className="text-neutral-800 dark:text-neutral-300 font-semibold leading-relaxed">{ivatan.result}</p>
+                                        <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1.5">Result</h5>
+                                        <p className="text-neutral-800 dark:text-neutral-350 font-semibold leading-relaxed">{ivatan.result}</p>
                                     </div>
                                 </div>
 
                                 <div className="pt-6 border-t border-neutral-200/30 dark:border-neutral-800/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                     <div className="flex flex-wrap gap-1.5">
                                         {ivatan.tech.map((t) => (
-                                            <span key={t} className="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-neutral-100 text-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-300">
+                                            <span key={t} className="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
                                                 {t}
                                             </span>
                                         ))}
@@ -198,20 +198,20 @@ export function FeaturedCaseStudies() {
 
                                     <div className="space-y-4 mb-6 text-[15px]">
                                         <div>
-                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1">The Problem</h5>
+                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">The Problem</h5>
                                             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{project.problem}</p>
                                         </div>
                                         <div>
-                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1">System Built</h5>
+                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">System Built</h5>
                                             <p className="text-neutral-800 dark:text-neutral-300 font-medium leading-relaxed">{project.systemBuilt}</p>
                                         </div>
                                         <div>
-                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1">My Responsibility</h5>
+                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">My Responsibility</h5>
                                             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{project.responsibility}</p>
                                         </div>
                                         <div>
-                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 mb-1">Result</h5>
-                                            <p className="text-neutral-800 dark:text-neutral-305 font-medium leading-relaxed">{project.result}</p>
+                                            <h5 className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">Result</h5>
+                                            <p className="text-neutral-800 dark:text-neutral-300 font-medium leading-relaxed">{project.result}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +219,7 @@ export function FeaturedCaseStudies() {
                                 <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/60 flex flex-col gap-3">
                                     <div className="flex flex-wrap gap-1">
                                         {project.tech.map((t) => (
-                                            <span key={t} className="px-2 py-0.5 rounded-md text-[9px] font-semibold bg-neutral-100 text-neutral-700 dark:bg-neutral-850 dark:text-neutral-300">
+                                            <span key={t} className="px-2 py-0.5 rounded-md text-[9px] font-semibold bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
                                                 {t}
                                             </span>
                                         ))}

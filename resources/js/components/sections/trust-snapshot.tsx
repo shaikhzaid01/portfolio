@@ -78,7 +78,7 @@ export function TrustSnapshot() {
         <section
             id="systems"
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-neutral-50/20 dark:bg-[#070B16]/50 border-y border-neutral-200/40 dark:border-sky-500/10 overflow-hidden"
+            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-y border-neutral-200/40 dark:border-sky-500/10 overflow-hidden"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header with Animation */}
@@ -99,7 +99,7 @@ export function TrustSnapshot() {
                 </div>
 
                 {/* Grid Container */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     {cards.map((card, idx) => {
                         const Icon = card.icon;
                         return (
@@ -110,8 +110,8 @@ export function TrustSnapshot() {
                                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                                 }`}
                             >
-                                {/* Subtle decorative top gradient line */}
-                                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-linear-to-r opacity-0 transition-opacity duration-500 group-hover:opacity-100 from-blue-500/80 via-cyan-400/80 to-purple-500/80" />
+                                {/* Subtle decorative top gradient line following the curve */}
+                                <div className="absolute inset-0 rounded-2xl border-t-2 border-transparent border-t-blue-500/80 dark:border-t-cyan-400/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
 
                                 {/* Card Header / Icon */}
                                 <div className="flex items-center gap-3">

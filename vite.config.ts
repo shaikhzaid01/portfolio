@@ -28,4 +28,9 @@ export default defineConfig({
             formVariants: true,
         }),
     ],
+    build: {
+        target: 'esnext',
+        reportCompressedSize: false,
+        cssMinify: 'lightningcss',
+    },
 });

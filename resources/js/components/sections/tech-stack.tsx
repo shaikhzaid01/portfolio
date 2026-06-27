@@ -79,12 +79,12 @@ export function TechStack() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-white dark:bg-[#050814] overflow-hidden"
+            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] overflow-hidden"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-1000 ease-out transform ${
+                    className={`max-w-3xl mx-auto text-center mb-10 transition-all duration-1000 ease-out transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >
@@ -105,14 +105,14 @@ export function TechStack() {
                         <div
                             key={category.title}
                             style={{ transitionDelay: `${idx * 80}ms` }}
-                            className={`group p-8 rounded-2xl border border-neutral-200/50 bg-neutral-50/40 dark:border-sky-500/10 dark:bg-[#0B1020] shadow-xs hover:border-neutral-305 dark:hover:border-neutral-700 transition-all duration-1000 transform ${
+                            className={`group p-8 rounded-2xl border border-neutral-200/50 bg-neutral-50/40 dark:border-sky-500/10 dark:bg-[#0B1020] shadow-xs hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-1000 transform ${
                                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                         >
                             <h4 className="text-[18px] font-bold text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                                 {category.title}
                             </h4>
-                            <p className="text-sm text-neutral-605 dark:text-neutral-400 leading-relaxed mt-2 mb-4">
+                            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mt-2 mb-4">
                                 {category.desc}
                             </p>
                             <div className="flex flex-wrap gap-1.5">
@@ -131,11 +131,11 @@ export function TechStack() {
 
                 {/* Bottom closing line */}
                 <div
-                    className={`mt-16 text-center transition-all duration-1000 ease-out delay-500 transform ${
+                    className={`mt-10 text-center transition-all duration-1000 ease-out delay-500 transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >
-                    <p className="text-xs font-bold text-neutral-450 dark:text-neutral-550 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
                         “The stack changes based on the project, but the focus stays the same: clean architecture, stable backend logic, secure workflows, and reliable deployment.”
                     </p>
                 </div>

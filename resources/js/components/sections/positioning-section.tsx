@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { SystemFlowVisual } from './system-flow-visual';
+import { SystemFlowVisual } from '../system-flow-visual';
 import { Target, Layers, ShieldAlert } from 'lucide-react';
 
 export function PositioningSection() {
@@ -38,7 +38,7 @@ export function PositioningSection() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-white dark:bg-[#050814] overflow-hidden"
+            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] overflow-hidden"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -54,10 +54,10 @@ export function PositioningSection() {
                         <h3 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] dark:text-neutral-50 mb-6 leading-[1.15]">
                             I Build Production Systems, Not Just Pages
                         </h3>
-                        <p className="text-base md:text-lg font-semibold leading-relaxed text-neutral-800 dark:text-neutral-250 mb-4 max-w-[640px]">
+                        <p className="text-base md:text-lg font-semibold leading-relaxed text-neutral-800 dark:text-neutral-300 mb-4 max-w-[640px]">
                             Most products do not fail because the interface looks bad. They fail because the backend, database, APIs, payments, deployment, and business workflows are not planned properly.
                         </p>
-                        <p className="text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 mb-8 max-w-[640px]">
+                        <p className="text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 mb-6 max-w-[640px]">
                             My work focuses on building reliable digital products from architecture to deployment — so the system is not only launched, but can be maintained, improved, debugged, and scaled with confidence.
                         </p>
 

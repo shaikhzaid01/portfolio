@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { ProductSystemBlueprint } from './product-system-blueprint';
+import { ProductSystemBlueprint } from '../product-system-blueprint';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface FlowCard {
@@ -62,12 +62,12 @@ export function ArchitectureShowcase() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
+            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-1000 ease-out transform ${
+                    className={`max-w-3xl mx-auto text-center mb-10 transition-all duration-1000 ease-out transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >
@@ -83,7 +83,7 @@ export function ArchitectureShowcase() {
                 </div>
 
                 {/* Top Split Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-10">
                     {/* Left text */}
                     <div
                         className={`lg:col-span-6 flex flex-col items-start text-left transition-all duration-1000 ease-out transform ${
@@ -143,7 +143,7 @@ export function ArchitectureShowcase() {
                                 <div className="flex flex-wrap items-center gap-1.5 justify-center">
                                     {flow.flow.map((node, nodeIdx) => (
                                         <div key={node} className="flex items-center gap-1.5">
-                                            <span className="px-2 py-1.5 rounded-md border border-neutral-200/50 bg-white text-[9px] font-bold text-neutral-700 dark:border-neutral-850 dark:bg-neutral-900 dark:text-neutral-350 shadow-3xs cursor-default">
+                                            <span className="px-2 py-1.5 rounded-md border border-neutral-200/50 bg-white text-[9px] font-bold text-neutral-700 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 shadow-3xs cursor-default">
                                                 {node}
                                             </span>
                                             {nodeIdx < flow.flow.length - 1 && (

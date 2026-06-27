@@ -46,7 +46,7 @@ export function AIWorkflow() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-28 md:py-36 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
+            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header */}
@@ -67,21 +67,21 @@ export function AIWorkflow() {
                 </div>
 
                 {/* Horizontal / Vertical Timeline Pipeline */}
-                <div className="mt-16 relative w-full">
+                <div className="mt-14 relative w-full">
                     {/* Visual connecting line for desktop */}
-                    <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-linear-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 -translate-y-1/2" />
+                    <div className="hidden lg:block absolute top-[20px] left-0 right-0 h-[2px] bg-linear-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 -translate-y-1/2" />
 
                     <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 lg:gap-4">
                         {steps.map((step, idx) => (
                             <div
                                 key={step}
                                 style={{ transitionDelay: `${idx * 100}ms` }}
-                                className={`flex lg:flex-col items-center gap-4 lg:gap-3 relative z-10 transition-all duration-1000 ease-out transform ${
+                                className={`flex lg:flex-col items-center gap-4 lg:gap-6 relative z-10 transition-all duration-1000 ease-out transform ${
                                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                                 }`}
                             >
                                 {/* Indicator Dot */}
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-[#0B1020] border border-neutral-205 dark:border-sky-500/10 shadow-xs text-xs font-mono font-bold text-neutral-700 dark:text-neutral-300">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-[#0B1020] border border-neutral-200 dark:border-sky-500/10 shadow-xs text-xs font-mono font-bold text-neutral-700 dark:text-neutral-300">
                                     0{idx + 1}
                                 </div>
 
