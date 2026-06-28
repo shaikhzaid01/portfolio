@@ -103,7 +103,7 @@ export function WorkingProcess() {
                                 <h4 className="text-[18px] font-bold text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                                     {step.title}
                                 </h4>
-                                <span className="text-xs font-bold font-mono tracking-widest text-neutral-400 dark:text-neutral-650">
+                                <span className="text-xs font-bold font-mono tracking-widest text-neutral-400 dark:text-neutral-600">
                                     {step.id}
                                 </span>
                             </div>

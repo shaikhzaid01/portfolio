@@ -45,7 +45,7 @@ export function AboutSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Details */}
                     <div
-                        className={`lg:col-span-7 flex flex-col items-start text-left transition-all duration-1000 ease-out transform ${
+                        className={`lg:col-span-7 flex flex-col items-start text-left transition-premium will-change-transform transform ${
                             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                         }`}
                     >
@@ -75,7 +75,7 @@ export function AboutSection() {
                                     <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600/10 text-blue-600 dark:bg-cyan-500/10 dark:text-cyan-400">
                                         <Award className="h-3.5 w-3.5" />
                                     </div>
-                                    <span className="text-sm font-medium text-neutral-800 dark:text-neutral-250">
+                                    <span className="text-sm font-medium text-neutral-800 dark:text-neutral-300">
                                         {h}
                                     </span>
                                 </div>
@@ -85,7 +85,7 @@ export function AboutSection() {
 
                     {/* Right profile/identity card */}
                     <div
-                        className={`lg:col-span-5 transition-all duration-1000 ease-out delay-300 transform ${
+                        className={`lg:col-span-5 transition-premium will-change-transform delay-200 transform ${
                             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                         }`}
                     >

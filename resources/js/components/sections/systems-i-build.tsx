@@ -18,7 +18,7 @@ interface SystemItem {
     accent: string;
 }
 
-export function SystemsIBuild() {
+export function SystemsIBuild({ hideHeader = false }: { hideHeader?: boolean }) {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -96,14 +96,10 @@ export function SystemsIBuild() {
         },
     ];
 
-    return (
-        <section
-            id="systems"
-            ref={sectionRef}
-            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
-        >
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                {/* Title block */}
+    const content = (
+        <>
+            {/* Title block */}
+            {!hideHeader && (
                 <div
                     className={`max-w-3xl mx-auto text-center transition-all duration-1000 ease-out transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
@@ -119,44 +115,46 @@ export function SystemsIBuild() {
                         End-to-end digital systems designed with clean architecture, reliable backend logic, scalable APIs, and production deployment in mind.
                     </p>
                 </div>
+            )}
 
-                {/* 8-card responsive Grid */}
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {systems.map((system, idx) => {
-                        const Icon = system.icon;
-                        return (
-                            <div
-                                key={idx}
-                                style={{ transitionDelay: `${idx * 80}ms` }}
-                                className={`group relative rounded-2xl border border-neutral-200/50 bg-white p-8 shadow-xs transition-all duration-700 hover:-translate-y-1 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] ${
-                                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                                }`}
-                            >
-                                {/* Subtle card hover glow effect */}
-                                <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-br from-blue-500/5 to-cyan-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            {/* 8-card responsive Grid */}
+            <div className={`${hideHeader ? 'mt-0' : 'mt-10'} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6`}>
+                {systems.map((system, idx) => {
+                    const Icon = system.icon;
+                    return (
+                        <div
+                            key={idx}
+                            style={{ transitionDelay: `${idx * 80}ms` }}
+                            className={`group relative rounded-2xl border border-neutral-200/50 bg-white p-8 shadow-xs transition-all duration-700 hover:-translate-y-1 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] ${
+                                isVisible || hideHeader ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                            }`}
+                        >
+                            {/* Subtle card hover glow effect */}
+                            <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-br from-blue-500/5 to-cyan-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                                {/* Icon marker */}
-                                <div className="flex h-9 w-9 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110 shrink-0 mb-5 text-neutral-500 dark:text-neutral-400">
-                                    <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${system.accent}`}>
-                                        <Icon className="h-4.5 w-4.5" />
-                                    </div>
+                            {/* Icon marker */}
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110 shrink-0 mb-5 text-neutral-500 dark:text-neutral-400">
+                                <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${system.accent}`}>
+                                    <Icon className="h-4.5 w-4.5" />
                                 </div>
-
-                                {/* Title */}
-                                <h4 className="text-[20px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
-                                    {system.title}
-                                </h4>
-
-                                {/* Description */}
-                                <p className="mt-3 text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400">
-                                    {system.desc}
-                                </p>
                             </div>
-                        );
-                    })}
-                </div>
 
-                {/* Bottom note */}
+                            {/* Title */}
+                            <h4 className="text-[20px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                                {system.title}
+                            </h4>
+
+                            {/* Description */}
+                            <p className="mt-3 text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400">
+                                {system.desc}
+                            </p>
+                        </div>
+                    );
+                })}
+            </div>
+
+            {/* Bottom note */}
+            {!hideHeader && (
                 <div
                     className={`mt-10 text-center transition-all duration-1000 ease-out delay-500 transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
@@ -166,6 +164,22 @@ export function SystemsIBuild() {
                         “Every system is planned with real users, admin workflows, security, database structure, deployment, and future maintenance in mind.”
                     </p>
                 </div>
+            )}
+        </>
+    );
+
+    if (hideHeader) {
+        return <div ref={sectionRef} className="w-full">{content}</div>;
+    }
+
+    return (
+        <section
+            id="systems"
+            ref={sectionRef}
+            className="w-full py-16 md:py-24 bg-neutral-50/20 dark:bg-[#070B16]/50 border-t border-neutral-200/40 dark:border-sky-500/10"
+        >
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                {content}
             </div>
         </section>
     );

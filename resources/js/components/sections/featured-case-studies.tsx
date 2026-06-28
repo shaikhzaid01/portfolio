@@ -97,7 +97,7 @@ export function FeaturedCaseStudies() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mb-10 transition-all duration-1000 ease-out transform ${
+                    className={`max-w-3xl mb-10 transition-premium will-change-transform transform ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                 >
@@ -116,7 +116,7 @@ export function FeaturedCaseStudies() {
                 <div className="space-y-12">
                     {/* Top Large Card: Ivatan */}
                     <div
-                        className={`group relative rounded-2xl border border-neutral-200/50 bg-neutral-50/40 p-8 shadow-xs transition-all duration-1000 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 ${
+                        className={`group relative rounded-2xl border border-neutral-200/50 bg-neutral-50/40 p-8 shadow-xs transition-all duration-500 ease-out hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg dark:hover:shadow-cyan-950/10 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 ${
                             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                         }`}
                     >
@@ -151,7 +151,7 @@ export function FeaturedCaseStudies() {
                                     </div>
                                     <div>
                                         <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1.5">Result</h5>
-                                        <p className="text-neutral-800 dark:text-neutral-350 font-semibold leading-relaxed">{ivatan.result}</p>
+                                        <p className="text-neutral-800 dark:text-neutral-200 font-semibold leading-relaxed">{ivatan.result}</p>
                                     </div>
                                 </div>
 
@@ -177,7 +177,7 @@ export function FeaturedCaseStudies() {
                             <div
                                 key={project.id}
                                 style={{ transitionDelay: `${idx * 150}ms` }}
-                                className={`group relative flex flex-col justify-between rounded-2xl border border-neutral-200/50 bg-white p-8 shadow-xs transition-all duration-1000 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 ${
+                                className={`group relative flex flex-col justify-between rounded-2xl border border-neutral-200/50 bg-white p-8 shadow-xs transition-all duration-500 ease-out hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg dark:hover:shadow-cyan-950/10 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-cyan-400/30 ${
                                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                                 }`}
                             >
