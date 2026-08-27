@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
         <!-- SEO Metadata -->
         <meta name="description" content="Shaikh Zaid's Portfolio - Professional software engineer, designing and building high-performance systems with Laravel, React, and server-side automation. Let's engineer scalable platforms with optimal uptime and security.">
         <meta name="keywords" content="Shaikh Zaid, Software Engineer, Full Stack Developer, Laravel, React, PHP, Web Development, API Integration, Backend Developer, Systems Architect">
