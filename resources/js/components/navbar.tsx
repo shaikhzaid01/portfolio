@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
-import { ThemeToggle } from './theme-toggle';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from './theme-toggle';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +17,14 @@ export function Navbar() {
         };
 
         window.addEventListener('scroll', handleScroll);
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     useEffect(() => {
-        if (!isOpen) return;
+        if (!isOpen) {
+            return;
+        }
 
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
@@ -30,6 +33,7 @@ export function Navbar() {
         };
 
         window.addEventListener('keydown', handleEscape);
+
         return () => window.removeEventListener('keydown', handleEscape);
     }, [isOpen]);
 
@@ -46,28 +50,31 @@ export function Navbar() {
         <header
             className={`sticky top-0 z-50 w-full transition-all duration-300 ${
                 isScrolled
-                    ? 'border-b border-neutral-200/40 bg-white/75 backdrop-blur-md dark:border-sky-500/10 dark:bg-[#050814]/75 shadow-xs'
+                    ? 'border-b border-neutral-200/40 bg-white/75 shadow-xs backdrop-blur-md dark:border-sky-500/10 dark:bg-[#050814]/75'
                     : 'border-b border-transparent bg-white/30 backdrop-blur-xs dark:bg-[#050814]/30'
             }`}
         >
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
                 {/* Logo & Subtitle */}
-                <a href="#" className="flex flex-col items-start gap-0.5 group focus-visible:outline-hidden">
+                <a
+                    href="#"
+                    className="group flex flex-col items-start gap-0.5 focus-visible:outline-hidden"
+                >
                     <span className="text-[19px] font-bold tracking-tight text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-50 dark:group-hover:text-cyan-400">
                         Shaikh Zaid
                     </span>
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+                    <span className="text-[9px] font-bold tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
                         Full Stack Engineer
                     </span>
                 </a>
 
                 {/* Desktop Nav Links */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden items-center gap-8 md:flex">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="relative text-[14px] font-semibold text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm px-1 py-0.5"
+                            className="relative rounded-sm px-1 py-0.5 text-[14px] font-semibold text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-50"
                         >
                             {link.name}
                         </a>
@@ -75,14 +82,17 @@ export function Navbar() {
                 </nav>
 
                 {/* Desktop Actions */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden items-center gap-4 md:flex">
                     <ThemeToggle />
                     <Button
                         asChild
                         variant="outline"
                         className="h-10 rounded-xl border-neutral-200/60 bg-transparent px-5 text-xs font-bold text-neutral-700 shadow-xs transition-colors hover:bg-neutral-50 hover:text-neutral-900 dark:border-sky-500/10 dark:text-neutral-300 dark:hover:bg-neutral-900 dark:hover:text-neutral-50"
                     >
-                        <a href="#contact" className="flex items-center gap-1.5">
+                        <a
+                            href="#contact"
+                            className="flex items-center gap-1.5"
+                        >
                             <PhoneCall className="h-3.5 w-3.5" />
                             Book a Call
                         </a>
@@ -100,15 +110,21 @@ export function Navbar() {
                         aria-label="Toggle menu"
                         className="h-10 w-10 rounded-lg text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-50"
                     >
-                        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                        {isOpen ? (
+                            <X className="h-5 w-5" />
+                        ) : (
+                            <Menu className="h-5 w-5" />
+                        )}
                     </Button>
                 </div>
             </div>
 
             {/* Mobile Slide-Down Menu */}
             <div
-                className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-screen border-b border-neutral-200/40 bg-white/95 backdrop-blur-lg dark:border-sky-500/10 dark:bg-[#050814]/95' : 'max-h-0'
+                className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+                    isOpen
+                        ? 'max-h-screen border-b border-neutral-200/40 bg-white/95 backdrop-blur-lg dark:border-sky-500/10 dark:bg-[#050814]/95'
+                        : 'max-h-0'
                 }`}
             >
                 <div className="flex flex-col gap-4 px-6 py-6">
@@ -118,18 +134,22 @@ export function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-base font-semibold text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-50 py-1.5 focus-visible:outline-hidden"
+                                className="py-1.5 text-base font-semibold text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-50"
                             >
                                 {link.name}
                             </a>
                         ))}
                     </nav>
-                    <div className="pt-2 border-t border-neutral-200/40 dark:border-neutral-800/40">
+                    <div className="border-t border-neutral-200/40 pt-2 dark:border-neutral-800/40">
                         <Button
                             asChild
-                            className="w-full h-11 justify-center rounded-xl bg-neutral-900 text-sm font-bold text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200"
+                            className="h-11 w-full justify-center rounded-xl bg-neutral-900 text-sm font-bold text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200"
                         >
-                            <a href="#contact" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
+                            <a
+                                href="#contact"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2"
+                            >
                                 <PhoneCall className="h-4 w-4" />
                                 Book a Call
                             </a>

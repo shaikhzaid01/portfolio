@@ -18,7 +18,7 @@ export function WorkingProcess() {
                     observer.unobserve(entry.target);
                 }
             },
-            { threshold: 0.1 }
+            { threshold: 0.1 },
         );
 
         if (sectionRef.current) {
@@ -69,45 +69,51 @@ export function WorkingProcess() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-16 md:py-24 bg-white dark:bg-[#050814] border-t border-neutral-100 dark:border-neutral-900/30"
+            className="w-full border-t border-neutral-100 bg-white py-16 md:py-24 dark:border-neutral-900/30 dark:bg-[#050814]"
         >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Header */}
                 <div
-                    className={`max-w-3xl mx-auto text-center mb-10 transition-all duration-1000 ease-out transform ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                    className={`mx-auto mb-10 max-w-3xl transform text-center transition-all duration-1000 ease-out ${
+                        isVisible
+                            ? 'translate-y-0 opacity-100'
+                            : 'translate-y-6 opacity-0'
                     }`}
                 >
-                    <h2 className="text-[13px] font-bold uppercase tracking-widest text-blue-600 dark:text-cyan-400 mb-3">
+                    <h2 className="mb-3 text-[13px] font-bold tracking-widest text-blue-600 uppercase dark:text-cyan-400">
                         Process
                     </h2>
-                    <h3 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] dark:text-neutral-50 leading-[1.15]">
+                    <h3 className="text-3xl leading-[1.15] font-extrabold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] dark:text-neutral-50">
                         How I Build
                     </h3>
-                    <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-[720px] mx-auto">
-                        A clear process helps clients understand what is being built, why it matters, and how the system will move from idea to production.
+                    <p className="mx-auto mt-4 max-w-[720px] text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400">
+                        A clear process helps clients understand what is being
+                        built, why it matters, and how the system will move from
+                        idea to production.
                     </p>
                 </div>
 
                 {/* Steps layout (3 columns on desktop, 1 on mobile) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {steps.map((step, idx) => (
                         <div
                             key={step.id}
                             style={{ transitionDelay: `${idx * 100}ms` }}
-                            className={`group relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-200/50 bg-neutral-50/40 dark:border-sky-500/10 dark:bg-[#0B1020] hover:border-neutral-300 dark:hover:border-sky-500/20 transition-all duration-1000 transform ${
-                                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                            className={`group relative flex transform flex-col justify-between rounded-2xl border border-neutral-200/50 bg-neutral-50/40 p-8 transition-all duration-1000 hover:border-neutral-300 dark:border-sky-500/10 dark:bg-[#0B1020] dark:hover:border-sky-500/20 ${
+                                isVisible
+                                    ? 'translate-y-0 opacity-100'
+                                    : 'translate-y-10 opacity-0'
                             }`}
                         >
-                            <div className="flex items-start justify-between mb-3">
-                                <h4 className="text-[18px] font-bold text-neutral-900 dark:text-neutral-50 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+                            <div className="mb-3 flex items-start justify-between">
+                                <h4 className="text-[18px] font-bold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-50 dark:group-hover:text-cyan-400">
                                     {step.title}
                                 </h4>
-                                <span className="text-xs font-bold font-mono tracking-widest text-neutral-400 dark:text-neutral-600">
+                                <span className="font-mono text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-600">
                                     {step.id}
                                 </span>
                             </div>
-                            <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mt-2">
+                            <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
                                 {step.desc}
                             </p>
                         </div>

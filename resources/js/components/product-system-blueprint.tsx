@@ -32,13 +32,13 @@ export function ProductSystemBlueprint() {
     ];
 
     return (
-        <div className="relative w-full p-8 rounded-2xl border border-neutral-200/50 bg-white shadow-lg dark:border-sky-500/10 dark:bg-[#0B1020] backdrop-blur-xs font-sans text-xs">
+        <div className="relative w-full rounded-2xl border border-neutral-200/50 bg-white p-8 font-sans text-xs shadow-lg backdrop-blur-xs dark:border-sky-500/10 dark:bg-[#0B1020]">
             {/* Title bar */}
-            <div className="flex items-center justify-between border-b border-neutral-200/30 dark:border-neutral-800/65 pb-3 mb-6">
-                <span className="font-bold tracking-tight text-neutral-500 dark:text-neutral-300 uppercase text-xs">
+            <div className="mb-6 flex items-center justify-between border-b border-neutral-200/30 pb-3 dark:border-neutral-800/65">
+                <span className="text-xs font-bold tracking-tight text-neutral-500 uppercase dark:text-neutral-300">
                     Product System Blueprint
                 </span>
-                <span className="text-blue-500 dark:text-cyan-400 font-bold uppercase tracking-widest text-[10px] animate-pulse">
+                <span className="animate-pulse text-[10px] font-bold tracking-widest text-blue-500 uppercase dark:text-cyan-400">
                     active schematic
                 </span>
             </div>
@@ -48,12 +48,15 @@ export function ProductSystemBlueprint() {
                 {/* Connecting vertical spine behind layers */}
                 <div className="absolute top-4 bottom-4 left-4 w-[1px] bg-linear-to-b from-blue-500/30 via-cyan-400/30 to-purple-500/30" />
 
-                {layers.map((layer, layerIdx) => (
-                    <div key={layer.name} className="relative pl-8 flex flex-col gap-2 group">
+                {layers.map((layer) => (
+                    <div
+                        key={layer.name}
+                        className="group relative flex flex-col gap-2 pl-8"
+                    >
                         {/* Connecting node */}
-                        <div className="absolute left-3 top-2 h-2 w-2 rounded-full border border-blue-500/50 bg-white dark:bg-[#050814] transition-colors group-hover:bg-cyan-400" />
-                        
-                        <span className="font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider text-[10px]">
+                        <div className="absolute top-2 left-3 h-2 w-2 rounded-full border border-blue-500/50 bg-white transition-colors group-hover:bg-cyan-400 dark:bg-[#050814]" />
+
+                        <span className="text-[10px] font-bold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                             {layer.name}
                         </span>
 
@@ -61,7 +64,7 @@ export function ProductSystemBlueprint() {
                             {layer.items.map((item) => (
                                 <div
                                     key={item}
-                                    className="px-3 py-1.5 rounded-lg border border-neutral-200/50 bg-neutral-50/50 dark:border-sky-500/5 dark:bg-[#050814]/40 text-neutral-800 dark:text-neutral-200 font-semibold tracking-tight shadow-3xs transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xs text-xs sm:text-[13px]"
+                                    className="shadow-3xs rounded-lg border border-neutral-200/50 bg-neutral-50/50 px-3 py-1.5 text-xs font-semibold tracking-tight text-neutral-800 transition-all duration-300 hover:border-neutral-300 hover:shadow-2xs sm:text-[13px] dark:border-sky-500/5 dark:bg-[#050814]/40 dark:text-neutral-200 dark:hover:border-neutral-700"
                                 >
                                     {item}
                                 </div>
